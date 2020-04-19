@@ -5,21 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>D3 - Bar Chart</title>
+    <script type="text/javascript" src="../d3.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div></div>
+    <div id="visualization"></div>
+  </body>
   <script>
-    const svgHeight = 500;
-    const svgWidth = 800;
+    function buildBarChart(dataset) {
+      const svgHeight = 500;
+      const svgWidth = 800;
 
-    const svg = d3
-      .select("body")
-      .append("svg")
-      .attr("height", svgHeight)
-      .attr("width", svgWidth);
+      const svg = d3
+        .select("#visualization")
+        .append("svg")
+        .attr("height", svgHeight)
+        .attr("width", svgWidth);
 
-    d3.csv("./alphabet")
+      const margin = {
+        top: 0,
+        right: 0,
+        bottom: 30,
+        left: 30
+      };
+
+      const xScale = d3
+        .scaleBand()
+        .domain(dataset.map(d => d.letter))
+        .range([margin.left, svgWidth])
+        .padding(0.1);
+
+      const yScale = d3
+        .scaleLinear()
+        .domain([0, d3.max(dataset, d => d.frequency)])
+        .range([svgHeight - margin.bottom, 0]);
+
+      // Using letter property as key
+      const bars = svg
+        .selectAll("rect")
+        .data(dataset, d => d.letter)
+        .join("rect")
+        .attr("x", d => xScale(d.letter))
+        .attr("y", d => yScale(d.frequency))
+        .attr("height", d => yScale(0) - yScale(d.frequency))
+        .attr("width", xScale.bandwidth())
+        .attr("fill", "blue");
+
+      const xAxis = d3.axisBottom().scale(xScale);
+
+      const gx = svg
+        .append("g")
+        .attr("class", "x axis")
+        .call(xAxis)
+        .attr("transform", `translate(0,${yScale(0)})`);
+
+      const yAxis = d3.axisLeft().scale(yScale);
+
+      const gy = svg
+        .append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+        .attr("transform", `translate(${margin.left},0)`);
+    }
+
+    d3.csv("./alphabet.csv")
       .then(dataset => {
-        console.log(dataset);
+        buildBarChart(dataset);
       })
       .catch(error => console.error(error));
   </script>
