@@ -32,13 +32,13 @@
       const xScale = d3
         .scaleBand()
         .domain(dataset.map(d => d.letter))
-        .range([margin.left, svgWidth - margin.right])
+        .range([margin.left, svgWidth])
         .padding(0.1);
 
       const yScale = d3
         .scaleLinear()
         .domain([0, d3.max(dataset, d => d.frequency)])
-        .range([svgHeight - margin.bottom, margin.top]);
+        .range([svgHeight - margin.bottom, 0]);
 
       // Using letter property as key
       const bars = svg
@@ -57,7 +57,7 @@
         .append("g")
         .attr("class", "x axis")
         .call(xAxis)
-        .attr("transform", `translate(0,${svgHeight - margin.bottom})`);
+        .attr("transform", `translate(0,${yScale(0)})`);
 
       const yAxis = d3.axisLeft().scale(yScale);
 
