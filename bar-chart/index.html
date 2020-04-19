@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>D3 - Bar Chart</title>
+  </head>
+  <body></body>
+  <script>
+    const svgHeight = 500;
+    const svgWidth = 800;
+
+    const svg = d3
+      .select("body")
+      .append("svg")
+      .attr("height", svgHeight)
+      .attr("width", svgWidth);
+
+    d3.csv("./alphabet")
+      .then(dataset => {
+        console.log(dataset);
+      })
+      .catch(error => console.error(error));
+  </script>
+</html>
