@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>D3 - Bar Chart</title>
     <script type="text/javascript" src="../d3.js"></script>
+    <style>
+      .bar:hover {
+        opacity: 0.9;
+      }
+    </style>
   </head>
   <body>
     <div>
@@ -54,6 +59,7 @@
         .selectAll("rect")
         .data(dataset, keyFunction)
         .join("rect")
+        .attr("class", "bar")
         .attr("x", d => xScale(d.letter))
         .attr("y", d => yScale(d.frequency))
         .attr("height", d => yScale(0) - yScale(d.frequency))
@@ -89,11 +95,15 @@
 
         const t = svg.transition().duration(1000);
 
-        gx.transition(t).call(xAxis);
+        gx.transition(t)
+          .call(xAxis)
+          .selectAll(".tick")
+          .delay((d, i) => i * 20);
 
         bars
           .data(dataset, keyFunction)
           .transition(t)
+          .delay((d, i) => i * 20)
           .attr("x", d => xScale(d.letter));
       });
     }
