@@ -8,7 +8,14 @@
     <script type="text/javascript" src="../d3.js"></script>
   </head>
   <body>
-    <div></div>
+    <div>
+      <select name="order" id="order">
+        <option value="alphabetical" selected>Alphabetical</option>
+        <option value="ascendingFrequency">Ascending Frequency</option>
+        <option value="descendingFrequency">Descending Frequency</option>
+      </select>
+    </div>
+    <br />
     <div id="visualization"></div>
   </body>
   <script>
@@ -40,16 +47,19 @@
         .domain([0, d3.max(dataset, d => d.frequency)])
         .range([svgHeight - margin.bottom, margin.top]);
 
+      const keyFunction = d => d.letter;
+
       // Using letter property as key
       const bars = svg
         .selectAll("rect")
-        .data(dataset, d => d.letter)
+        .data(dataset, keyFunction)
         .join("rect")
         .attr("x", d => xScale(d.letter))
         .attr("y", d => yScale(d.frequency))
         .attr("height", d => yScale(0) - yScale(d.frequency))
         .attr("width", xScale.bandwidth())
-        .attr("fill", "blue");
+        .attr("fill", "teal")
+        .attr("opacity", 0.8);
 
       const xAxis = g =>
         g
@@ -66,6 +76,28 @@
           .call(d3.axisLeft(yScale));
 
       const gy = svg.append("g").call(yAxis);
+
+      d3.select("#order").on("change", function changeOrder() {
+        let orderFunction = (a, b) => d3.ascending(a.letter, b.letter);
+        if (this.value === "ascendingFrequency") {
+          orderFunction = (a, b) => d3.ascending(a.frequency, b.frequency);
+        } else if (this.value === "descendingFrequency") {
+          orderFunction = (a, b) => d3.descending(a.frequency, b.frequency);
+        }
+
+        xScale.domain(dataset.sort(orderFunction).map(d => d.letter));
+
+        gx.transition()
+          .duration(1000)
+          .call(xAxis);
+
+        bars
+          .data(dataset, keyFunction)
+          .order()
+          .transition()
+          .duration(1000)
+          .attr("x", d => xScale(d.letter));
+      });
     }
 
     d3.csv("./alphabet.csv")
