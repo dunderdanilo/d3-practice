@@ -87,15 +87,13 @@
 
         xScale.domain(dataset.sort(orderFunction).map(d => d.letter));
 
-        gx.transition()
-          .duration(1000)
-          .call(xAxis);
+        const t = svg.transition().duration(1000);
+
+        gx.transition(t).call(xAxis);
 
         bars
           .data(dataset, keyFunction)
-          .order()
-          .transition()
-          .duration(1000)
+          .transition(t)
           .attr("x", d => xScale(d.letter));
       });
     }
