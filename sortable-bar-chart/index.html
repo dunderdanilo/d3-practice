@@ -52,9 +52,10 @@
         .domain([0, d3.max(dataset, d => d.frequency)])
         .range([svgHeight - margin.bottom, margin.top]);
 
+      // Better use a key function so that you don't need to replicate it throughout the code when needed
+      // DRY
       const keyFunction = d => d.letter;
 
-      // Using letter property as key
       const bars = svg
         .selectAll("rect")
         .data(dataset, keyFunction)
@@ -67,12 +68,15 @@
         .attr("fill", "teal")
         .attr("opacity", 0.8);
 
+      // A good pattern is to encapsulate the translation together with the axis function
+      // being it a function that will be applied to the g element you want.
       const xAxis = g =>
         g
           .attr("class", "x axis")
           .attr("transform", `translate(0,${svgHeight - margin.bottom})`)
           .call(d3.axisBottom(xScale));
 
+      // tickOuterSize is the first tick the one at the start of the axis
       const gx = svg.append("g").call(xAxis);
 
       const yAxis = g =>
@@ -93,10 +97,18 @@
 
         xScale.domain(dataset.sort(orderFunction).map(d => d.letter));
 
+        // Again DRY
+        // If you don't create the basic transition first and pass it as argument
+        // You would need to use the .duration() twice.
+        // This can be error prone. You can change one and somehow forget to change the other, creating problems in the future.
         const t = svg.transition().duration(1000);
 
         gx.transition(t)
           .call(xAxis)
+          // Why select ticks?
+          // Because if you were to use .delay directly it would use the g selection
+          // which contains only one element.
+          // You need to use each tick index to do the animation
           .selectAll(".tick")
           .delay((d, i) => i * 20);
 
