@@ -7,8 +7,10 @@
 }
 
 .visualization-box {
-  padding: 30px;
-  margin: 10px;
+  padding: 40px 40px;
+  margin: 10px auto;
+  max-width: 800px;
+
   -webkit-box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.4);
   -moz-box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.4);
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.4);
