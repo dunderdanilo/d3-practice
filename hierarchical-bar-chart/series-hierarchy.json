@@ -1,0 +1,223 @@
+{
+  "name": "series",
+  "finished": false,
+  "children": [
+    {
+      "name": "Harry Potter",
+      "finished": true,
+      "children": [
+        { "name": "Sorcerer's Stone", "value": 77506 },
+        { "name": "Chamber of Secrets", "value": 85263 },
+        { "name": "Prisoner of Azkaban", "value": 107379 },
+        { "name": "Goblet of Fire", "value": 191003 },
+        {
+          "name": "Order of the Phoenix",
+          "value": 257047
+        },
+        { "name": "Half-Blood Prince", "value": 169363 },
+        { "name": "Deathly Hallows", "value": 197985 }
+      ]
+    },
+    {
+      "name": "The Lord of the Rings",
+      "finished": true,
+      "children": [
+        { "name": "The Fellowship of the Ring", "value": 185328 },
+        { "name": "The Two Towers", "value": 155583 },
+        { "name": "The Return of the King", "value": 135159 }
+      ]
+    },
+    {
+      "name": "A Song of Ice and Fire",
+      "finished": false,
+      "children": [
+        { "name": "A Game of Thrones", "value": 292796 },
+        { "name": "A Clash of Kings", "value": 319042 },
+        { "name": "A Storm of Swords", "value": 414675 },
+        { "name": "A Feast for Crows", "value": 295344 },
+        { "name": "A Dance With Dragons", "value": 414875 }
+      ]
+    },
+    {
+      "name": "First Law",
+      "finished": true,
+      "children": [
+        { "name": "The Blade Itself", "value": 191200 },
+        { "name": "Before They Are Hanged", "value": 198300 },
+        { "name": "Last Argument of Kings", "value": 234100 }
+      ]
+    },
+    {
+      "name": "Book of the Ancestor",
+      "finished": true,
+      "children": [
+        { "name": "Red Sister", "value": 168805 },
+        { "name": "Grey Sister", "value": 130008 },
+        { "name": "Holy Sister", "value": 147900 }
+      ]
+    },
+    {
+      "name": "His Dark Materials",
+      "finished": true,
+      "children": [
+        { "name": "The Golden Compass", "value": 117059 },
+        { "name": "The Subtle Knife", "value": 99124 },
+        { "name": "The Amber Spyglass", "value": 158169 }
+      ]
+    },
+    {
+      "name": "The Band",
+      "finished": false,
+      "children": [
+        { "name": "Kings of the Wyld", "value": 144000 },
+        { "name": "Bloody Rose", "value": 143710 }
+      ]
+    },
+    {
+      "name": "The Witcher",
+      "finished": true,
+      "children": [
+        { "name": "The Last Wish", "value": 90398 },
+        { "name": "The Sword of Destiny", "value": 113533 },
+        { "name": "Blood of Elves", "value": 101465 },
+        { "name": "The Time of Contempt", "value": 103669 },
+        { "name": "Baptism of Fire", "value": 111904 },
+        { "name": "The Tower of Swallows", "value": 143893 },
+        { "name": "The Lady of the Lake", "value": 161727 },
+        { "name": "Season of Storms", "value": 106153 }
+      ]
+    },
+    {
+      "name": "The Poppy War",
+      "finished": false,
+      "children": [
+        { "name": "The Poppy War", "value": 159007 },
+        { "name": "The Dragon Republic", "value": 187835 }
+      ]
+    },
+    {
+      "name": "The Chronicles of Narnia",
+      "finished": true,
+      "children": [
+        { "name": "The Lion, The Witch and The Wardrobe", "value": 37423 },
+        { "name": "Prince Caspian", "value": 45265 },
+        { "name": "The Horse and His Boy", "value": 48493 },
+        { "name": "The Voyage of the Dawn Treader", "value": 52789 },
+        { "name": "The Silver Chair", "value": 51676 },
+        { "name": "The Magician's Nephew", "value": 41530 },
+        { "name": "The Last Battle", "value": 43584 }
+      ]
+    },
+    {
+      "name": "Misborn - Original Series",
+      "finished": true,
+      "children": [
+        { "name": "The Final Empire", "value": 212012 },
+        { "name": "The Well of Ascension", "value": 245373 },
+        { "name": "The Hero of Ages", "value": 234693 }
+      ]
+    },
+    {
+      "name": "The Stormlight Archive",
+      "finished": false,
+      "children": [
+        { "name": "The Way of Kings", "value": 380929 },
+        { "name": "Words of Radiance", "value": 397607 },
+        { "name": "Oathbringer", "value": 451002 }
+      ]
+    },
+    {
+      "name": "The Dark Tower",
+      "finished": true,
+      "children": [
+        { "name": "The Gunslinger", "value": 62765 },
+        { "name": "The Drawing of the Three", "value": 126095 },
+        { "name": "The Waste Lands", "value": 174503 },
+        { "name": "Wizard and Glass", "value": 255662 },
+        { "name": "Wolves of the Calla", "value": 244468 },
+        { "name": "Song of Susannah", "value": 119292 },
+        { "name": "The Dark Tower", "value": 275687 }
+      ]
+    },
+    {
+      "name": "Earthsea Cycle",
+      "finished": true,
+      "children": [
+        { "name": "A Wizard of Earthsea", "value": 56533 },
+        { "name": "The Tombs of Atuan", "value": 45939 },
+        { "name": "The Farthest Shore", "value": 60591 },
+        { "name": "Tehanu", "value": 99200 },
+        { "name": "The Other Wind", "value": 89280 }
+      ]
+    },
+    {
+      "name": "Dresden Files",
+      "finished": false,
+      "children": [
+        { "name": "Storm Front", "value": 86851 },
+        { "name": "Fool moon", "value": 101177 },
+        { "name": "Grave Peril", "value": 114726 },
+        { "name": "Summer Knight", "value": 111610 },
+        { "name": "Death Masks", "value": 107382 },
+        { "name": "Blood Rites", "value": 121308 },
+        { "name": "Dead Beat", "value": 144555 },
+        { "name": "Proven Guilty", "value": 151569 },
+        { "name": "White Night", "value": 130464 },
+        { "name": "Small favor", "value": 139312 },
+        { "name": "Turn Coat", "value": 141745 },
+        { "name": "Changes", "value": 146787 },
+        { "name": "Ghost Story", "value": 159845 },
+        { "name": "Cold Days", "value": 171722 },
+        { "name": "Skin Game", "value": 151922 }
+      ]
+    },
+    {
+      "name": "Kingkiller Chronicles",
+      "finished": false,
+      "children": [
+        { "name": "The Name of the Wind", "value": 256291 },
+        { "name": "The Wise Man’s Fear", "value": 400000 }
+      ]
+    },
+    {
+      "name": "The Wheel of Time",
+      "finished": true,
+      "children": [
+        { "name": "New Spring", "value": 121919 },
+        { "name": "The Eye of the World", "value": 300489 },
+        { "name": "The Great Hunt", "value": 260291 },
+        { "name": "The Dragon Reborn", "value": 243697 },
+        { "name": "The Shadow Rising", "value": 385402 },
+        { "name": "The Fires of Heaven", "value": 346255 },
+        { "name": "Lord of Chaos", "value": 395433 },
+        { "name": "A Crown of Swords", "value": 287780 },
+        { "name": "The Path of Daggers", "value": 222998 },
+        { "name": "Winter's Heart", "value": 238950 },
+        { "name": "Crossroads of Twilight", "value": 264671 },
+        { "name": "Knife of Dreams", "value": 310039 },
+        { "name": "The Gathering Storm", "value": 295728 },
+        { "name": "Towers of Midnight", "value": 326707 },
+        { "name": "A Memory of Light", "value": 353765 }
+      ]
+    },
+    {
+      "name": "Gentlemen Bastards",
+      "finished": false,
+      "children": [
+        { "name": "The Lies of Locke Lamora", "value": 196620 },
+        { "name": "Red Seas Under Red Skies", "value": 219204 },
+        { "name": "The Republic of Thieves", "value": 231710 }
+      ]
+    },
+    {
+      "name": "Inheritance Cycle",
+      "finished": true,
+      "children": [
+        { "name": "Eragon", "value": 157000 },
+        { "name": "Eldest", "value": 213000 },
+        { "name": "Brisingr", "value": 254000 },
+        { "name": "Inheritance", "value": 280000 }
+      ]
+    }
+  ]
+}
